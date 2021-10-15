@@ -11,8 +11,8 @@ def index():
         if file:
             filename = file.filename
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return render_template('index.html', filename=filename)
-            
+            return render_template('index.html', filename=url_for('uploaded_file', filename=filename))
+
     return render_template('index.html')
     
 
